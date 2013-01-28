@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Portal Labkom FMIPA UNS</title>
+        <title>.::TOTALINDO::.</title>
         <meta HTTP-EQUIV="REFRESH" content="2; url=<?php echo base_url().$redirect ?>">
         <link href=<?php echo '"' . base_url() . 'resources/css/default.css"'; ?> rel="stylesheet" type="text/css" />
         <style>
