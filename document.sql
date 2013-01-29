@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.0.1
+-- version 3.2.4
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jan 26, 2013 at 09:55 PM
--- Server version: 5.1.37
--- PHP Version: 5.3.0
+-- Host: localhost:3306
+-- Waktu pembuatan: 29. Januari 2013 jam 11:33
+-- Versi Server: 5.1.41
+-- Versi PHP: 5.3.1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -22,25 +22,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `files`
---
-
-CREATE TABLE IF NOT EXISTS `files` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `filename` varchar(255) NOT NULL,
-  `title` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `files`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
@@ -48,10 +30,10 @@ CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(20) NOT NULL,
   `password` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`) VALUES

@@ -117,7 +117,7 @@ nav span:after {
 		<li> <a href="#"><span></span> <img src="<?php echo base_url().'images/gambar1.png'; ?>" align="absmiddle" /><font color="#FFFFFF" face="Chintzy CPU BRK" size="6" align="middle">USER</font></a>
 			<ul>
 				<li> <a href="#">Add User </a></li>
-				<li> <a href="#">View User</a></li>
+				<li> <a href="http://localhost/document/index.php/user/view">View User</a></li>
 				
 			</ul>
 		
@@ -128,7 +128,7 @@ nav span:after {
 		
 		<li> <a href="#"><span></span> <img src="<?php echo base_url().'images/gambar3.png'; ?>" align="absmiddle" /><font color="#FFFFFF"  face="Chintzy CPU BRK" size="6" align="middle">DOCUMENT</font></a>
 			<ul>
-				<li> <a href="http://localhost/document/index.php/proses">Add Document</a></li>
+				<li> <a href="http://localhost/document/index.php/add_doc">Add Document</a></li>
 				<li> <a href="#">View Document</a></li>
 				
 			</ul>
@@ -138,12 +138,37 @@ nav span:after {
 <nav>
 	<ul>
 		
-		<li> <a href="http://localhost/blog/index.php/proses/uploud"><span></span> <img src="<?php echo base_url().'images/gambar4.png'; ?>" align="absmiddle" /><font color="#FFFFFF" face="Chintzy CPU BRK" size="6" align="middle">CATEGORY</font></a>
+		<li> <a href="#"><span></span> <img src="<?php echo base_url().'images/gambar4.png'; ?>" align="absmiddle" /><font color="#FFFFFF" face="Chintzy CPU BRK" size="6" align="middle">CATEGORY</font></a>
 			<ul>
-				<li> <a href="#">Add Category</a></li>
-				<li> <a href="#">View Category</a></li>
+				<li> <a href="http://localhost/document/index.php/kategori/tambah">Add Category</a></li>
+				<li> <a href="http://localhost/document/index.php/kategori">View Category</a></li>
 				
 			</ul>
 		
 </nav>
+
+<nav>
+	<ul>
+		
+		<li> <a href="#"><span></span> <img src="<?php echo base_url().'images/gambar4.png'; ?>" align="absmiddle" /><font color="#FFFFFF" face="Chintzy CPU BRK" size="6" align="middle">TYPE</font></a>
+			<ul>
+				<li> <a href="#">Add Type</a></li>
+				<li> <a href="#">View Type</a></li>
+				
+			</ul>
+		
+</nav>
+
+<nav>
+	<ul>
+		
+		<li> <a href="#"><span></span> <img src="<?php echo base_url().'images/gambar3.png'; ?>" align="absmiddle" /><font color="#FFFFFF"  face="Chintzy CPU BRK" size="6" align="middle">ROLE</font></a>
+			<ul>
+				<li> <a href="http://localhost/document/index.php/proses">Add Role</a></li>
+				<li> <a href="#">View Role</a></li>
+				
+			</ul>
+		
+</nav>
+
 </body>
