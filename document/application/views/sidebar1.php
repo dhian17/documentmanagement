@@ -128,8 +128,8 @@ nav span:after {
 		
 		<li> <a href="#"><span></span> <img src="<?php echo base_url().'images/gambar3.png'; ?>" align="absmiddle" /><font color="#FFFFFF"  face="Chintzy CPU BRK" size="6" align="middle">DOCUMENT</font></a>
 			<ul>
-				<li> <a href="http://localhost/document/index.php/add_doc">Add Document</a></li>
-				<li> <a href="#">View Document</a></li>
+				<li> <a href="http://localhost/document/index.php/upload">Add Document</a></li>
+				<li> <a href="http://localhost/document/index.php/upload/view_file">View Document</a></li>
 				
 			</ul>
 		
@@ -147,17 +147,7 @@ nav span:after {
 		
 </nav>
 
-<nav>
-	<ul>
-		
-		<li> <a href="#"><span></span> <img src="<?php echo base_url().'images/gambar4.png'; ?>" align="absmiddle" /><font color="#FFFFFF" face="Chintzy CPU BRK" size="6" align="middle">TYPE</font></a>
-			<ul>
-				<li> <a href="#">Add Type</a></li>
-				<li> <a href="#">View Type</a></li>
-				
-			</ul>
-		
-</nav>
+
 
 <nav>
 	<ul>
