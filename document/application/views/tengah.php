@@ -1,13 +1,7 @@
-		<div id="content">
-			<div class="post">
-				<h2 class="title"><a href="#">Berhasil Login</a></h2>
 
-				<div class="entry">
-					<p>WELCOME GUYS ^^
-                    </p>
+				<h2 class="title"><a href="#"></a></h2>
 
-		          </ul>
-	          </div>
-			</div>
-		</div>
-		<!-- end #content -->
+				
+                
+
+		  

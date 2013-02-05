@@ -21,7 +21,10 @@ margin-top : -750px;
 <td align="center"><?php echo anchor('user/edit_user/'.$row->id,'edit')."|".anchor('user/hapus_user/'.$row->id,'delete',array
 ('onClick' => "return confirm('apakah anda yakin ')"));?></td>
 </tr>
-<?php $i++; endforeach;?>
 
+<?php $i++; endforeach;?>
+<?php
+echo anchor('user/download','Download Link');
+?>
 </table>
 </div>

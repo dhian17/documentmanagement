@@ -12,19 +12,70 @@ class User_model extends CI_Model
 		return $data_user;
 	}
 	
+	function tampil_data2($id){
+
+	$this->db->select('*');
+		$this->db->where('id',$id);
+return $this->db->get('user');
+		
+	}
+	
+	function ambil_user($id){
+		$this->db->where('id',$id);
+		return $this->db->get('user');
+	}
 	//mendefinisikan nama tabel
 	var $table="user";
 	
 	//untuk simpan data
-	function simpan_user($data){
-		$this->db->insert($this->table,$data);
-	}
 	
+		function create($params = array()) {
+        if (empty($params)) {
+            $data = array(
+                'username' => $this->input->post('username'),
+                'password' => $this->input->post('password'),
+				'fullname' => $this->input->post('nama_lengkap'),
+				'position' => $this->input->post('jabatan'),
+				'departemen' => $this->input->post('departemen'),
+				'email' => $this->input->post('email'),
+				'mobile' => $this->input->post('mobile'),
+				'phone' => $this->input->post('phone'),
+				'fax' => $this->input->post('fax'),
+				
+                
+            );
+            $this->db->insert($this->table, $data);
+        } else {
+            $this->db->insert($this->table, $params);
+        }
+    }
 	//untuk update data
-	function simpan_update($id,$data){
-		$this->db->where('id', $id);
-		$this->db->update($this->table, $data);
-	}
+	 function simpan_update($id) {
+        if (empty($params)) {
+            $data = array(
+                'username' => $this->input->post('username'),
+                'password' => $this->input->post('password'),
+				'nama_lengkap' => $this->input->post('nama_lengkap'),
+				'jabatan' => $this->input->post('jabatan'),
+				'departemen' => $this->input->post('departemen'),
+				'email' => $this->input->post('email'),
+				'mobile' => $this->input->post('mobile'),
+				'phone' => $this->input->post('phone'),
+				'fax' => $this->input->post('fax'),
+				
+                
+            );
+
+            $this->db->where('id', $id);
+            $this->db->update($this->table, $data);
+        } else {
+            $this->db->where('id', $id);
+            $this->db->update($this->table, $params);
+        }
+    }
+
+
+
 	
 	//untuk hapus data
 	function hapus_user($id){

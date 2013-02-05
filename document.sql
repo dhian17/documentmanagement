@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 30. Januari 2013 jam 17:13
+-- Waktu pembuatan: 05. Februari 2013 jam 20:15
 -- Versi Server: 5.1.41
 -- Versi PHP: 5.3.1
 
@@ -83,19 +83,15 @@ CREATE TABLE IF NOT EXISTS `files` (
   `filename` varchar(255) NOT NULL,
   `title` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data untuk tabel `files`
 --
 
 INSERT INTO `files` (`id`, `filename`, `title`) VALUES
-(11, '863f61905743b336a1f555ab6623bba6.jpg', 'dsf'),
-(12, 'ff52c8c59b3f56d88cc0c005af2f2c2c.doc', 'yu'),
-(14, '3261af5e6ae662ded40fb1bb2e386d96.pdf', 'pdf'),
-(15, 'c1f8852e9c455fc27c0b096195898f08.pdf', 'pdf'),
-(16, 'narasi.pdf', 'narasi.pdf'),
-(17, '591402891Marina_Amalia_201010370311358_Modul_4.pdf', 'y');
+(23, '15015-5-671127116420.doc', 'hijah'),
+(20, 'narasi.pdf', 'pdf');
 
 -- --------------------------------------------------------
 
@@ -108,19 +104,81 @@ CREATE TABLE IF NOT EXISTS `tbldownload` (
   `id_kat` int(5) NOT NULL,
   `judul_file` varchar(200) COLLATE latin1_general_ci NOT NULL,
   `nama_file` varchar(200) COLLATE latin1_general_ci NOT NULL,
+  `nomor` int(200) NOT NULL,
+  `version` float NOT NULL,
+  `history` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `type` varchar(255) CHARACTER SET latin1 NOT NULL,
   `tgl_posting` date NOT NULL,
   `author` varchar(20) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`id_download`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=26 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=54 ;
 
 --
 -- Dumping data untuk tabel `tbldownload`
 --
 
-INSERT INTO `tbldownload` (`id_download`, `id_kat`, `judul_file`, `nama_file`, `tgl_posting`, `author`) VALUES
-(2, 7, 'Multiple Delete Dengan Checkbox (PHP)', '1017888225Multiple-Delete-Record-dg-checkbox.zip', '2010-09-26', 'hadiq'),
-(22, 7, 'Pengenalan Logika Basic d C#', '873173204C_Sharp__Part_1_-_Pengenalan_Logika_Basic.zip', '2010-10-17', 'admin'),
-(23, 10, 'Class dan Array di C#', '255647243C_Sharp__Part_2_-_Class_Dan_Array.zip', '2010-10-17', 'admin');
+INSERT INTO `tbldownload` (`id_download`, `id_kat`, `judul_file`, `nama_file`, `nomor`, `version`, `history`, `type`, `tgl_posting`, `author`) VALUES
+(46, 12, 'saya', '1144813526AI-I-201010370311362.docx', 1, 1.2, 'tidak ada', 'form', '2013-02-03', 'admin'),
+(53, 13, 'tes', '562203764CURICULUM_VITA1.docx', 1, 1.3, 'ada', 'form', '2013-02-04', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tblkategori`
+--
+
+CREATE TABLE IF NOT EXISTS `tblkategori` (
+  `id_kategori` int(3) NOT NULL AUTO_INCREMENT,
+  `nama_kategori` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_kategori`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data untuk tabel `tblkategori`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tblkategoridownload`
+--
+
+CREATE TABLE IF NOT EXISTS `tblkategoridownload` (
+  `id_kategori_download` int(3) NOT NULL AUTO_INCREMENT,
+  `nama_kategori_download` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_kategori_download`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data untuk tabel `tblkategoridownload`
+--
+
+INSERT INTO `tblkategoridownload` (`id_kategori_download`, `nama_kategori_download`) VALUES
+(13, 'bener banget'),
+(12, 'oke');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbllogin`
+--
+
+CREATE TABLE IF NOT EXISTS `tbllogin` (
+  `username` varchar(100) NOT NULL,
+  `psw` text NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `idlink` varchar(10) NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbllogin`
+--
+
+INSERT INTO `tbllogin` (`username`, `psw`, `nama`, `status`, `idlink`) VALUES
+('admin', '*4ACFE3202A5FF5CF467898FC58AAB1D615029441', 'Administrator', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -129,18 +187,27 @@ INSERT INTO `tbldownload` (`id_download`, `id_kat`, `judul_file`, `nama_file`, `
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(32) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `nama_lengkap` varchar(100) NOT NULL,
+  `jabatan` varchar(100) NOT NULL,
+  `departemen` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `mobile` int(15) NOT NULL,
+  `phone` int(15) NOT NULL,
+  `fax` int(15) NOT NULL,
+  `photo` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=219 ;
 
 --
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`) VALUES
-(3, 'admin', '21232f297a57a5a743894a0e4a801fc3');
+INSERT INTO `user` (`id`, `username`, `password`, `nama_lengkap`, `jabatan`, `departemen`, `email`, `mobile`, `phone`, `fax`, `photo`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Full  Name Admin', 'administrator', 'teknikal', 'admin@gmail.com', 2147483647, 987654, 987654, ''),
+(197, 'thigaa', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'tigha rahma', 'administrator2', 'teknikal', 'me@gmail.com', 2147483647, 9988776, 9988776, 'Desert.jpg');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

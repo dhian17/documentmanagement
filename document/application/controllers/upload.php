@@ -77,17 +77,12 @@ public function files()
 }
 public function delete_file($file_id)
 {
-   if ($this->files_model->delete_file($file_id))
-   {
-      $status = 'success';
-      $msg = 'File successfully deleted';
-   }
-   else
-   {
-      $status = 'error';
-      $msg = 'Something went wrong when deleteing the file, please try again';
-   }
-   echo json_encode(array('status' => $status, 'msg' => $msg));
+   
+		$file_id = $this->security->xss_clean($this->uri->segment(3));
+		$result = $this->files_model->tampil_data($file_id);
+		if ($result == null) redirect('upload');
+		else $this->files_model->delete_file($file_id);
+	  	redirect('upload/view_file');
 }
 }
 ?>

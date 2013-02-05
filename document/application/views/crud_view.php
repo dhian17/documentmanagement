@@ -44,25 +44,20 @@
 						<?php
 						$c=0;
 						
-						foreach($data_file->result() as $row){
-							?>
+						foreach($data_file->result() as $row):?>
+							
 							<tr>
                             
 								<td><?php echo $c=$c+1; ?></td>
                                 <td><?php echo $row->title; ?></td>
                                 <td><?php echo $row->filename; ?></td>
-								<td align="center"><?php echo anchor('crud/update/'.$row->id,'edit')." | ".anchor('crud/delete/'.$row->id,'delete',array
-('onClick' => "return confirm('apakah anda yakin ?')."));?>
-
-                                
-                                <?php echo anchor('download/files/'.$row->id,' | download');?></td>
+								<td align="center"><?php echo anchor('upload/update/'.$row->id,'edit')." | ".anchor('upload/delete_file/'.$row->id,'delete',array('onClick' => "return confirm('apakah anda yakin ?')."));?></td>
+								<td align="center"><?php echo anchor('download/files/'.$row->id,' | download');?></td>
                              
                                 
                                 
 							</tr>
-							<?php	
-						}
-						?>
+							<?php $c++; endforeach;?>
 					</table>
 					
 					

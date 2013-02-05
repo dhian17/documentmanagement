@@ -1,6 +1,6 @@
 <style>
 #content{
-margin-top : -750px;	
+margin-top : -550px;	
 }
 </style>
 
