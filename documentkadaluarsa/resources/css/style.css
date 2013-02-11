@@ -1,0 +1,117 @@
+body{
+	background:url(../../images/images_login/3590-colorful-carbon-fiber-1280x800-abstract-wallpaper.jpg);
+	overflow: hidden; 
+	position: relative; 
+	height: 100%; 
+	margin: 0px; 
+	padding: 0px; 
+	border: medium none; 	
+	font:12px/17px Arial, Helvetica, sans-serif;
+	background-color:#111;
+	}
+
+
+.login1{
+	margin:auto;
+	margin-top:15%;
+	width:350px;	
+	background-color:#EEE;
+	padding:20px 0 0 20px;
+	height:50px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	
+}
+.login{
+	margin:auto;
+	margin-top:0%;
+	width:350px;	
+	background: url(http://weebtutorials.com/wp-content/uploads/2012/11/a.png);
+	padding:20px 0 0 20px;
+	height:130px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+.bawah{
+   position:fixed;
+   bottom:20px;
+   width:100%;
+   color:#EEE;
+}
+.logo{
+	visibility: visible; 
+	display: block; 
+	position: absolute; 
+	margin: 0px; 
+	z-index: 2; 
+	top: 0px; 
+	bottom: auto; 
+	left: 0px; 
+	right: 0px; 
+	width: auto; 
+	height: 68px; 
+	overflow: auto;
+	background-color: gray;
+}
+.isi_logo{
+	float:left; 
+	padding-top:5px; 
+	padding-left:3px; 
+	padding-right:20px;
+}
+
+.menu{
+	visibility: visible; 
+	display: block; 
+	position: absolute; 
+	margin: 0px; 
+	z-index: 2; 
+	left: 0px; 
+	right: auto; 
+	top: 76px; 
+	bottom: 31px; 
+	height: 513px; 
+	width: 261px;
+}
+.info{
+	visibility: visible; 
+	display: block; 
+	position: absolute; 
+	margin: 0px; 
+	z-index: 2; 
+	left: auto; 
+	right: 0px; 
+	top: 76px; 
+	bottom: 31px; 
+	height: 513px; 
+	width: 196px;
+}
+
+.konten_utama{
+	visibility: visible; 
+	display: block; 
+	position: absolute; 
+	margin:0px;
+	z-index: 2; 
+	left: 271px; 
+	right: 18px; 
+	top: 76px; 
+	bottom: 31px; 
+	height: 513px; 
+	width: 885px; 
+	
+}
+
+.footer{
+	 visibility: visible; 
+	 display: block; 
+	 position: absolute; 
+	 margin: 0px; 
+	 z-index: 2; 
+	 top: auto; 
+	 bottom: 0px; 
+	 left: 0px; 
+	 right: 0px; 
+	 width: auto; 
+	 height: 19px; 
+}
