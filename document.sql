@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 05. Februari 2013 jam 20:15
+-- Waktu pembuatan: 11. Februari 2013 jam 12:09
 -- Versi Server: 5.1.41
 -- Versi PHP: 5.3.1
 
@@ -111,15 +111,15 @@ CREATE TABLE IF NOT EXISTS `tbldownload` (
   `tgl_posting` date NOT NULL,
   `author` varchar(20) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`id_download`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=54 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=63 ;
 
 --
 -- Dumping data untuk tabel `tbldownload`
 --
 
 INSERT INTO `tbldownload` (`id_download`, `id_kat`, `judul_file`, `nama_file`, `nomor`, `version`, `history`, `type`, `tgl_posting`, `author`) VALUES
-(46, 12, 'saya', '1144813526AI-I-201010370311362.docx', 1, 1.2, 'tidak ada', 'form', '2013-02-03', 'admin'),
-(53, 13, 'tes', '562203764CURICULUM_VITA1.docx', 1, 1.3, 'ada', 'form', '2013-02-04', 'admin');
+(62, 14, 'apa', 'Beasiswa_Mandiri_2012.docx', 12, 1, '-', 'form', '2013-02-11', ''),
+(61, 14, 'ini dokumen', '6.doc', 2, 1, '-', 'type', '2013-02-06', '');
 
 -- --------------------------------------------------------
 
@@ -148,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `tblkategoridownload` (
   `id_kategori_download` int(3) NOT NULL AUTO_INCREMENT,
   `nama_kategori_download` varchar(20) NOT NULL,
   PRIMARY KEY (`id_kategori_download`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data untuk tabel `tblkategoridownload`
@@ -156,7 +156,8 @@ CREATE TABLE IF NOT EXISTS `tblkategoridownload` (
 
 INSERT INTO `tblkategoridownload` (`id_kategori_download`, `nama_kategori_download`) VALUES
 (13, 'bener banget'),
-(12, 'oke');
+(12, 'oke'),
+(14, 'Data');
 
 -- --------------------------------------------------------
 
@@ -188,6 +189,7 @@ INSERT INTO `tbllogin` (`username`, `psw`, `nama`, `status`, `idlink`) VALUES
 
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
+  `level` tinyint(1) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `nama_lengkap` varchar(100) NOT NULL,
@@ -199,15 +201,21 @@ CREATE TABLE IF NOT EXISTS `user` (
   `fax` int(15) NOT NULL,
   `photo` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=219 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=234 ;
 
 --
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `nama_lengkap`, `jabatan`, `departemen`, `email`, `mobile`, `phone`, `fax`, `photo`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Full  Name Admin', 'administrator', 'teknikal', 'admin@gmail.com', 2147483647, 987654, 987654, ''),
-(197, 'thigaa', 'd8578edf8458ce06fbc5bb76a58c5ca4', 'tigha rahma', 'administrator2', 'teknikal', 'me@gmail.com', 2147483647, 9988776, 9988776, 'Desert.jpg');
+INSERT INTO `user` (`id`, `level`, `username`, `password`, `nama_lengkap`, `jabatan`, `departemen`, `email`, `mobile`, `phone`, `fax`, `photo`) VALUES
+(1, 1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'admin', 'administrator', 'teknikal', 'admin@gmail.com', 2147483647, 987654, 987654, './uploads/rambut_berkaki17.jpg'),
+(219, 1, 'june', '937c257c3bbe5ff9720e1ee9078dbaef', 'Yuni Ma''rifah', 'Staff', 'teknikal', 'june_aqj69@rocketmail.com', 7987987, 79798, 87797, './uploads/IMG_32571.JPG'),
+(228, 2, 'mr', 'e10adc3949ba59abbe56e057f20f883e', 'mr', 'kjlbnlk', 'nklnl', 'ju@gmail.com', 567890, 3456789, 56789, ''),
+(229, 3, 'cto', 'e10adc3949ba59abbe56e057f20f883e', 'cto', 'kjbl', 'hfgdhgjj', 'ju@gmail.com', 4567890, 56789, 456778, ''),
+(230, 4, 'vp', 'e10adc3949ba59abbe56e057f20f883e', 'vp', 'ljhnlk', 'nmkblj', 'ju@gmail.com', 34567, 45678, 45678, ''),
+(231, 5, 'staff', 'e10adc3949ba59abbe56e057f20f883e', 'staff', 'nlknl', 'jokjp', 'ju@gmail.com', 456789, 45678, 2345678, ''),
+(232, 3, 'junee', 'e10adc3949ba59abbe56e057f20f883e', 'juneeeee', 'nln', 'jpjp', 'ju_aqj69@yahoo.com', 568, 6789, 789, './uploads/bbdiplaypixx3.jpg'),
+(233, 0, 'dani', 'e10adc3949ba59abbe56e057f20f883e', 'dani aja', 'administrator2', 'it', 'jhp@giu.com', 234567, 23454567, 34564567, './uploads/rambut_berkaki.jpg');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
