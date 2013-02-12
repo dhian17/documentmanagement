@@ -1,10 +1,11 @@
 <?php echo form_open('user2/view')?>
 <h2><?php echo $this->session->userdata('id');?></h2><br/>
 <?php foreach($data_user ->result() as $row):?>
-<tr><br/><br/>
-
-<div class="control-group center">  
-<div class="well well-large" align="center">
+<ul class="thumbnails">
+<div class="row-fluid">
+<td>
+<div class="span4 offset2"> 
+<div class="well well-small" align="center">
 
 	<img src="<?php echo base_url().$row->photo; ?>"width="100" height="100" class="img-polaroid"/><br/>
 		<div class="dl-horizontal">
@@ -27,8 +28,11 @@
 
 </div>
 </div>
-
-</tr>
+</td>
+&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
 <?php  endforeach;?>
+</div>
+</ul>
 <?php echo form_close();?>
+
 

@@ -102,6 +102,7 @@
 
 		<?php echo form_hidden('id',$use->id);?>
 		Image : <br/>
+        <img src="<?php echo base_url().$use->photo; ?>"width="100" height="100" class="img-polaroid"/>
 		<?php echo form_upload('photo');?><br/><br/><br/>
 		<button type="submit" class="btn btn-success" rel="tooltip" title="first tooltip" name="submit" id="submit" >Update</button>
 

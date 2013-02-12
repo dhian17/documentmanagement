@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-
- <link rel="stylesheet" media="screen" href="<?php echo base_url();?>css/bootstrap.css"/> 
-   <script src="http://code.jquery.com/jquery-latest.js"></script>
-   <link href="<?php echo base_url();?>css/bootstrap-responsive.css"  rel="stylesheet" media="screen"/> 
-    </head>
-  <body>
 
 <?php echo form_open('user2/view_each')?>
 
@@ -69,5 +59,4 @@
 <?php echo form_close();?>
 
 
- </body>
-</html>
+ 

@@ -5,6 +5,7 @@ class Home extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('ModelAkun');
+		$this->load->model('mkategori');
     }
 
     function index() {
@@ -40,5 +41,13 @@ class Home extends CI_Controller {
 			redirect('login_page');
 		}
     }
+	function perkategori(){
+$id=$this->uri->segment(3);
+//$data['title']='Kota Wisata Batu';
+$isi['content']='content';
+
+//$data['footer']='@denny_umm';
+$this->load->view('template_admin',$isi);
+}
 
 }

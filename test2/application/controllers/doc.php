@@ -3,6 +3,7 @@ class Doc extends CI_Controller {
 var $template = 'template_admin';
 	public function __construct() {
         parent::__construct();
+		$this->load->model('mkategori');
 		$this->load->helper(array('form','url', 'text_helper','date','file'));
 		$this->load->database();
 		//$this->load->plugin();

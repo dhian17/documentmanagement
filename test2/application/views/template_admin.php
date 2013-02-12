@@ -98,9 +98,39 @@
 			});
 		});
 	  </script>
+      
+      
+      <link href="style.css" rel="stylesheet" type="text/css" />
+<script language="javascript">
+// fungsi awal yang dijalankan dengan status id apabila block akan di tampilkan submenunya apabila none akan disembunyikan submenunya
+function _treeawal(){
+	buka = document.getElementById('keuangan').style.display="none";
+	buka = document.getElementById('user').style.display="block";
+}
+
+//fungsi aksi tree apabila sebuah menu diklik akan menampilkan atau menyembunyikan submenunya
+function _treeaksi(nama_id){
+var buka = document.getElementById(nama_id).style.display;
+
+	if (buka == "block") {
+		buka = document.getElementById(nama_id).style.display="none";
+	} 
+	
+	else 
+	{
+		buka = document.getElementById(nama_id).style.display="block";
+	}
+
+}
+
+
+</script>
+
+
+      
 
 </head>
-<body>
+<body onLoad="_treeawal()">
 	<?php echo $this->load->view('header');?>
     <?php echo $this->load->view('sidebar');?>
 	<?php echo $this->load->view('content');?>

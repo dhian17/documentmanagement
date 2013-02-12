@@ -15,7 +15,6 @@
 
 </head>
 <body><br /><br/><br/><br/><br/><div class="control-group center">
-<div class=""><img src="<?php echo base_url().'images/images_login/img_header_tunasmedia.png'; ?>"  /><br/>
 
 		<?php echo "<form action='akun/login' method='post' class=''>";
 			echo "<fieldset>
@@ -30,12 +29,13 @@
 			);?>
 
         <div class="well">
-        
+        <div class=""><img src="<?php echo base_url().'images/images_login/img_header_tunasmedia.png'; ?>"  /><br/>
+
        <div class="container">
     
         <form class="form-horizontal" action="akun.php" method="post">
           <fieldset>
-              <legend>Sign In:</legend>
+             
               
   <div class="controls">
         	<?php echo "<label class='l'  for='username'>Username </label>".form_input($username).""?>

@@ -19,6 +19,8 @@
 			<li><a href="<?php echo base_url('posts/index');?>">View Document </a></li>
 			<li><a href="<?php echo base_url('user2/register');?>">Add User </a></li>
 			<li><a href="<?php echo base_url('user2/view');?>">View User</a></li>
+            <li><a href="<?php echo base_url('kategori/tambah');?>">add cat</a></li>
+            <li><a href="<?php echo base_url('kategori');?>">list cat</a></li>
 		</ul>
  
         <ul class="nav nav-tabs">

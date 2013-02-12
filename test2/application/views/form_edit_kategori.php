@@ -1,11 +1,4 @@
-     
-<style>
-#content{
-margin-top : -550px;	
-}
-</style>
 
-<div id="content">
 
 <h2><font color="#FFFFFF" face="Cheri, Helvetica, sans-serif" size="7">Edit Kategori</font></h2>
 <?php foreach($kategori->result() as $kat){
@@ -23,4 +16,3 @@ margin-top : -550px;
 </table>
 <?php echo form_close();?>
 
-</div>

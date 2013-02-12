@@ -5,6 +5,7 @@ class Akun extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('ModelAkun');
+		$this->load->model('mkategori');
     }
 
     function login() {

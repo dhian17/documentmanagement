@@ -13,6 +13,7 @@ class User2 extends CI_Controller {
 	{
 	  parent::__construct();
       $this->load->model('user_model');
+	  $this->load->model('mkategori');
 	  $this->load->helper(array('form', 'url'));
        //$this->load->library('image_moo') ;
 	  }

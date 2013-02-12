@@ -15,6 +15,7 @@ class Posts extends CI_Controller {
         parent::__construct();
        // $this->general->checkAdmin();
         $this->load->model('Posts_model');
+		$this->load->model('mkategori');
         //$this->load->model('Categories_model');
     }
 
