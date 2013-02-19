@@ -102,6 +102,7 @@
 </head>
 <body>
 	<?php echo $this->load->view('header_staff');?>
+    <?php echo $this->load->view('sidebar_staff');?>
 	<?php echo $this->load->view('content');?>
 	<?php echo $this->load->view($isi);?>
 	<?php echo $this->load->view('footer');?>

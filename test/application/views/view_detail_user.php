@@ -1,7 +1,7 @@
 <?php echo form_open('user2/view')?>
 <h2><?php echo $this->session->userdata('id');?></h2><br/>
 <?php foreach($data_user ->result() as $row):?>
-<ul class="thumbnails">
+
 <div class="row-fluid">
 <td>
 <div class="span4 offset2"> 
@@ -29,10 +29,11 @@
 </div>
 </div>
 </td>
-&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+
 <?php  endforeach;?>
-</div>
-</ul>
 <?php echo form_close();?>
+</div>
+
+
 
 

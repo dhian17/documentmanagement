@@ -8,25 +8,19 @@
 class Posts_model extends CI_Model {
 
     var $table = 'posts';
-    
+    var $status = array(
+        0 => 'draft',
+        1 => 'published'
+    );
 
     function __construct() {
         parent::__construct();
-		//$this->load->model('mkategori');
+		$this->load->model('Categories_model');
     }
-	
-	function getpost(){
-$this->db->order_by('id','desc');
-
-$q=$this->db->get('posts');
-return $q;
-}
-
-	
 
     function findAll($limit = null, $offset = null, $q = null) {
-        $this->db->select('posts.*,category.kat_doc');
-        $this->db->join('category', 'category.id = posts.id_kategori');
+        $this->db->select('posts.*,categories.name');
+         $this->db->join('categories', 'categories.id = posts.categories_id');
         //$this->db->join('users', 'users.id = posts.users_id');
         if ($q != null) {
             $this->db->like('title', $q);
@@ -39,29 +33,8 @@ return $q;
             return $query->result_array();
         }
     }
-	
-	function tampil_doc($id){
 
-	$this->db->select('*');
-		$this->db->where('id',$id);
-return $this->db->get('posts');
-		
-	}
-	
-	
-function selengkapnya($id){
-$this->db->where('id_kategori',$id);
-//$this->db->where('status',1);
-$q=$this->db->get('posts');
-return $q;
-}
 
-function selengkapnyaa($id){
-$this->db->where('id_kategori',$id);
-//$this->db->where('status',1);
-$q=$this->db->get('posts');
-return $q;
-}
    /* function findActive($limit = null, $offset = null, $q = null) {
         $this->db->select('posts');
        // $this->db->join('categories', 'categories.id = posts.categories_id');
@@ -80,11 +53,11 @@ return $q;
         }
     }*/
 
-  /*  function findByCategoryId($categories_id, $limit = null, $offset = null) {
-        $this->db->select('posts');
-        //$this->db->join('categories', 'categories.id = posts.categories_id');
+     function findByCategoryId($categories_id) {
+        $this->db->select('posts.*,categories.name');
+        $this->db->join('categories', 'categories.id = posts.categories_id');
         //$this->db->join('users', 'users.id = posts.users_id');
-        $this->db->limit($limit, $offset);
+        //$this->db->limit($limit, $offset);
         $this->db->where('posts.status', 1);
         $this->db->where('posts.categories_id', $categories_id);
         $this->db->order_by('id', 'desc');
@@ -93,8 +66,27 @@ return $q;
         if ($query->num_rows() > 0) {
             return $query->result_array();
         }
-    }*/
+    }
+function tampil_doc($id){
 
+	$this->db->select('*');
+		$this->db->where('id',$id);
+return $this->db->get('posts');
+		
+	}
+function selengkapnya($id){
+$this->db->where('categories_id',$id);
+//$this->db->where('status',1);
+$q=$this->db->get('posts');
+return $q;
+}
+
+function selengkapnyaa($id){
+$this->db->where('categories_id',$id);
+$this->db->where('status',1);
+$q=$this->db->get('posts');
+return $q;
+}
 
    /* function findOthersInCategory($categories_id, $article_id, $limit = null, $offset = null) {
         $this->db->select('posts.*,categories.name');
@@ -145,10 +137,9 @@ return $q;
                 'nomor' => $this->input->post('nomor'),
 				'version' => $this->input->post('version'),
 				'history' => $this->input->post('history'),
-				'type' => $this->input->post('type'),
-				'id_kategori'=>$this->input->post('id_kategori'),
-                //'categories_id' => $this->input->post('categories_id'),
-                //'status' => $this->input->post('status'),
+				'type' => $this->input->post('type'),				
+                'categories_id' => $this->input->post('categories_id'),
+                'status' => $this->input->post('status'),
                 //'users_id' => $this->session->userdata('id'),
                 'created' => date("Y-m-d H:i:s")
             );
@@ -167,9 +158,8 @@ return $q;
 				'version' => $this->input->post('version'),
 				'history' => $this->input->post('history'),
 				'type' => $this->input->post('type'),
-				'id_kategori'=>$this->input->post('id_kategori'),
-                //'categories_id' => $this->input->post('categories_id'),
-                //'status' => $this->input->post('status'),
+               'categories_id' => $this->input->post('categories_id'),
+                'status' => $this->input->post('status'),
                 //'users_id' => $this->session->userdata('id'),
                 'modified' => date("Y-m-d H:i:s")
             );

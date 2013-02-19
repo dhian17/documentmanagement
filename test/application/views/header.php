@@ -17,14 +17,14 @@
 			</li>
 			<li><a href="<?php echo base_url('posts/add');?>">Add Document </a></li>
 			<li><a href="<?php echo base_url('posts/index');?>">View Document </a></li>
-			<li><a href="<?php echo base_url('user2/register');?>">Add User </a></li>
+			<li><a href="<?php echo base_url('user2/add');?>">Add User </a></li>
 			<li><a href="<?php echo base_url('user2/view');?>">View User</a></li>
-            <li><a href="<?php echo base_url('kategori/tambah');?>">add cat</a></li>
-            <li><a href="<?php echo base_url('kategori');?>">list cat</a></li>
+            <li><a href="<?php echo base_url('categories/add');?>">add cat</a></li>
+            <li><a href="<?php echo base_url('categories');?>">list cat</a></li>
 		</ul>
  
         <ul  class="nav nav-tabs">
-			<li class="dropdown" ><a class="dropdown-toggle"  data-toggle="dropdown" href="#">User<b class="caret"></b></a>
+			<li class="dropdown" ><a class="dropdown-toggle"  data-toggle="dropdown" href="#">hi!, <?php echo $this->session->userdata('nama_lengkap');?><b class="caret"></b></a>
   				<ul class="dropdown-menu">
 					<li><a href="#"><i class="icon-user icon-white"></i> Profil</a></li>
 					<li><a href="#"><i class="icon-wrench icon-white"></i>     Setting</a></li>

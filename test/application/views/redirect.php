@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
        
-        <meta HTTP-EQUIV="REFRESH" content="5; url=<?php echo base_url().$redirect ?>">
+        <meta HTTP-EQUIV="REFRESH" content="1; url=<?php echo base_url().$redirect ?>">
        
         
     </head>
@@ -40,10 +40,10 @@
 
 
         <br/><br/><br/><br/><br/><br/>
-            <h1>Selamat datang </h1>
+            <h1> <?php $this->session->userdata('nama_lengkap'); ?></h1>
     
 <div class="progress progress-striped active">
-  <div class="bar" style="width: 100%;"></div>
+<div class="bar" style="width: 100%;"></div>
 
            
         </div>

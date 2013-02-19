@@ -226,6 +226,8 @@ a:hover {
   border-radius: 6px;
 }
 .img-polaroid {
+	width: 100px;
+	height: 100px;
   padding: 4px;
   background-color: #fff;
   border: 1px solid #ccc;

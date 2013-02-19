@@ -15,8 +15,8 @@
 			<li class="active">
 				<a href="#">Home</a>
 			</li>
-			<li><a href="<?php echo base_url('doc/tambahupload');?>">Add Document </a></li>
-			<li><a href="<?php echo base_url('doc/upload');?>">View Document </a></li>
+			
+			<li><a href="<?php echo base_url('posts/index2');?>">View Document </a></li>
 
 		</ul>
  

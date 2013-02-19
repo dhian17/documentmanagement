@@ -6,11 +6,11 @@ class User_model extends CI_Model{
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('mkategori');
+		
 	}
 	
 	function tampil_data(){
-		$data_user=$this->db->query("select * from user order by id asc");
+		$data_user=$this->db->query("select * from user order by id desc");
 		return $data_user;
 	}
 function tampil_data2($id){
@@ -37,7 +37,7 @@ return $this->db->get('user');
 				'mobile' => $this->input->post('mobile'),
 				'phone' => $this->input->post('phone'),
 				'fax' => $this->input->post('fax'),
-				'photo' => $this->input->post('photo')
+				'photo' => ('./uploads/user-icon.jpg'),
                 
             );
             $this->db->insert($this->table, $data);

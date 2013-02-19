@@ -1,27 +1,39 @@
 
-<h2>&nbsp;</h2><br />
+<table class="table">
+
+  <thead>
+    <tr>
+      <th width="100">Title</th>
+      <th width="200">File Name</th>
+      <th width="150">Date Modified</th>
+      <th width="55">status</th>
+      <th width="50">aksi</th>
+      <th width="50">down</th>
+      
+    </tr>
+  </thead>
 <?php echo form_open('posts/add')?>
 <?php foreach($posts as $post):?>
+<table class="table table-striped">
 <tr>
 
 
-<div class="control-group center"> 
 
-<div class="well well-large" align="center">
 
-<strong><td ><?php echo $post ['title'];?></td></strong><br/>
-<td ><?php echo $post ['image'];?></td><br/>
-<td ><?php echo $post ['created'];?></td><br/>
-
-<br/>
-<td ><?php echo anchor('posts/edit/'.$post['id'],'edit')."|".anchor('posts/delete/'.$post['id'],'delete',array
+<td width="100"><strong><?php echo $post ['title'];?></strong></td>
+<td width="200"><?php echo $post ['image'];?></td>
+<td width="150"><?php echo $post ['created'];?></td>
+<td width="55"><?php  if($post ['status']==1){echo "Published";}else{echo "Draft";}?></td>
+<td width="50"><?php echo anchor(''.$post['id'],'<i class=" icon-check"></i>')."|".anchor(''.$post['id'],'<i class=" icon-edit"></i>')."|".anchor('posts/edit/'.$post['id'],'<i class=" icon-pencil"></i>')."|".anchor('posts/delete/'.$post['id'],'<i class="  icon-trash"></i>',array
 ('onClick' => "return confirm('apakah anda yakin ')"));?></td>
-<td><?php echo "<b><a href='".base_url()."./public/media/posts/".$post['image']."'>[ Download ]</a></b>"?></td>
+<td width="50"><?php echo "<b><a href='".base_url()."./public/media/posts/".$post['image']."'>[ Down ]</a></b>"?></td>
 
-</div></div>
-</tr>
+
+
 
 
 <?php  endforeach;?>
 
 <?php echo form_close();?>
+</tr>
+</table></table>

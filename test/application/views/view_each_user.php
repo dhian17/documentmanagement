@@ -10,7 +10,9 @@
 <br/>
 <div class="control-group center">  
 <div class="well well-large" align="center">
-
+<table class="table table-striped" >
+<tr>
+<td width="125">
 
 <img src="<?php echo base_url().$row->photo; ?>"width="100" height="100" class="img-polaroid"/><br/>
 <div class="dl-horizontal">

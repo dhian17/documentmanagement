@@ -21,86 +21,167 @@
 	<script src="<?php echo base_url();?>js/bootstrap-tab.js"></script>
 	<script src="<?php echo base_url();?>js/bootstrap-tooltip.js"></script>
 	<script src="<?php echo base_url();?>js/bootstrap-popover.js"></script>
-	<script src="<?php echo base_url();?>js/jquery.validate.js" type="text/javascript" ></script>
-	<script type="text/javascript">
-	  $(document).ready(function(){
-			$('input').hover(function()
-			{
-			$(this).popover('show')
-		});
-			$("#register").validate({
-				rules:{
-					username:"required",
-					password:{
-						required:true,
-						minlength: 6
-					},
-					nama_lengkap:"required",
-					jabatan:"required",
-					departemen:"required",
-					email:{
-							required:true,
-							email: true
-						},
-						mobile:{
-						required:true,
-						minlength: 6
-					},
-						phone:{
-						required:true,
-						minlength: 6
-					},
-						fax:{
-						required:true,
-						minlength: 6
-					},
-					
-					
-					
+	
+ <script type="text/javascript" src="<?php echo base_url();?>js/jquery.tools.min.js">
+ </script>
+  <script type="text/javascript" src="<?php echo base_url();?>js/jquery.validate.js"></script><!--validasi pendaftaran customer -->
+
+  <script>
+
+$(function() {
+
+	// if the function argument is given to overlay,
+	// it is assumed to be the onBeforeLoad event listener
+	$("a[rel]").overlay({
+
+		mask: 'darkred',
+		effect: 'apple',
+
+		onBeforeLoad: function() {
+
+			// grab wrapper element inside content
+			var wrap = this.getOverlay().find(".contentWrap");
+
+			// load the page specified in the trigger
+			wrap.load(this.getTrigger().attr("href"));
+		}
+
+	});
+});
+</script>
+
+  
+  <script type="text/javascript">
+		$(document).ready(function() {
+			$("#form1").validate({
+				rules: {
+				  username: "required", 
+				  password: {
+						required: true,
+					   minlength: 5
+				  },		
+				  nama_lengkap:"required",
+				  jabatan:"required",
+				  departemen:"required",
+				  mobile:{
+						required: true,
+					   minlength: 10
+				  },		
+				  phone:{
+						required: true,
+					   minlength: 6
+				  },		
+				  fax:{
+						required: true,
+					   minlength: 6
+				  },		
+				  email: {				
+						required: true,
+						email: true
+					}
+
 				},
-				messages:{
-					username:"Enter your username",
-					password:{
-						required:"Enter your password",
-						minlength:"Password must be minimum 6 characters"
-					},
-					nama_lengkap:"Enteryour first and last name",
-					jabatan:"Enter your position",
-					departemen:"Enter your department",
-					email:{
-						required:"Enter your email address",
-						email:"Enter valid email address"
-					},
-					mobile:{
-						required:"Enter your mobile number",
-						email:"Enter valid number"
-					},
-					phone:{
-						required:"Enter your phone number",
-						email:"Enter valid number"
-					},
-					fax:{
-						required:"Enter your fax number",
-						email:"Enter valid number"
-					},
-					
-					
+			
+      	messages: { 
+			    username: {
+				    required: '. Nama harus di isi'
+			    },
+			    password: {
+				    required : '. Password harus di isi',
+				    minlength: '. Password minimal 5 karakter'
+			    },
+				nama_lengkap:{
+					required:'. Nama lengkap harus di isi'
 				},
-				errorClass: "help-inline",
-				errorElement: "span",
-				highlight:function(element, errorClass, validClass) {
-					$(element).parents('.control-group').addClass('error');
+				jabatan:{
+					required:'. Jabatan harus di isi'
 				},
-				unhighlight: function(element, errorClass, validClass) {
-					$(element).parents('.control-group').removeClass('error');
-					$(element).parents('.control-group').addClass('success');
-				}
+				departemen:{
+					required:'. departement harus di isi'
+				},
+			    email: {
+				    required: '. Email harus di isi',
+				    email   : '. Email harus valid'
+			    },
+				mobile: {
+				    required: '. mobile harus di isi',
+			    },
+				phone: {
+				    required : '. phone harus di isi',
+				    minlength: '. fax harus 6 karakter'
+			    },
+				fax: {
+				    required : '. fax harus di isi',
+				    minlength: '. fax harus 6 karakter'
+			    }
+
+			   },
+         
+         success: function(label) {
+            label.text('OK!').addClass('valid');
+         }
 			});
 		});
-	  </script>
+	</script>
+    
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$("#form2").validate({
+				rules: {
+				  title: "required", 
+				  image: "required", 
+				  nomor:"required",
+				  version:"required",
+				  history:"required",
+				  type:"required", 	
+
+				},
+			
+      	messages: { 
+			    title: {
+				    required: '. Judul harus di isi'
+			    },
+			    image: {
+				    required : '. Dokumen harus di isi'
+			    },
+				nomor:{
+					required:'. No harus di isi'
+				},
+				version:{
+					required:'. Versi harus di isi'
+				},
+				history:{
+					required:'. history harus di isi'
+				},
+			    type: {
+				    required: '. Type harus di isi'
+			    }
+
+			   },
+         
+         success: function(label) {
+            label.text('OK!').addClass('valid');
+         }
+			});
+		});
+	</script>
+	
+<script type="text/javascript">
+function apply()
+{
+  document.form1.sub.disabled=true;
+  if(document.form1.chk.checked==true)
+  {
+    document.form1.sub.disabled=false;
+  }
+  if(document.form1.chk.checked==false)
+  {
+    document.form1.sub.enabled=false;
+  }
+}
+</script> 
       
-      
-      <link href="style.css" rel="stylesheet" type="text/css" />
+      <link href="<?php echo base_url();?>css/style.css" rel="stylesheet" type="text/css" />
 <script language="javascript">
 // fungsi awal yang dijalankan dengan status id apabila block akan di tampilkan submenunya apabila none akan disembunyikan submenunya
 function _treeawal(){
@@ -125,6 +206,13 @@ var buka = document.getElementById(nama_id).style.display;
 
 
 </script>
+
+
+
+     <link rel="stylesheet" href="<?php echo base_url();?>css/val.css" type="text/css" />
+ <link rel="stylesheet" href="<?php echo base_url();?>css/overlay-apple.css" media="screen" type="text/css" />
+
+
 
 
       

@@ -6,11 +6,11 @@
 
 <li class="active"><a href="#"  onclick="_treeaksi('keuangan')"><i class="icon-home icon-white"></i> Data Document </a></li> 
 <ul id="keuangan">
-<?php $id_kategori=$this->mkategori->getkategori(); ?>
+<?php $categories=$this->Categories_model->getkategori(); ?>
 
-<?php foreach($id_kategori->result() as $kat){?>
+<?php foreach($categories->result() as $kat){?>
 <i class="icon-tags"></i>
-<?php echo anchor('home1/perkategori/'.$kat->id, $kat->kat_doc);?><br/>
+<?php echo anchor('home1/perkategori/'.$kat->id, $kat->name);?><br/>
 <?php } ?>
 
 
