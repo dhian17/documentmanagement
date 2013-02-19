@@ -129,7 +129,7 @@ $(function() {
 			$("#form2").validate({
 				rules: {
 				  title: "required", 
-				  image: "required", 
+				 
 				  nomor:"required",
 				  version:"required",
 				  history:"required",
@@ -141,9 +141,7 @@ $(function() {
 			    title: {
 				    required: '. Judul harus di isi'
 			    },
-			    image: {
-				    required : '. Dokumen harus di isi'
-			    },
+			    
 				nomor:{
 					required:'. No harus di isi'
 				},

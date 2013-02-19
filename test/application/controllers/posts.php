@@ -12,7 +12,8 @@ class Posts extends CI_Controller {
     var $imagePath = 'public/media/posts/';
     var $status = array(
         0 => 'draft',
-        1 => 'published'
+        1 => 'published',
+		2 => 'rejected'
     );
 
     function __construct() {
@@ -108,7 +109,7 @@ function view_each(){
             );
             if ($_FILES['image']['error'] != 4) {
                 $config['upload_path'] = $this->imagePath;
-                $config['allowed_types'] = 'jpg|png|jpeg|gif|doc|docx';
+                $config['allowed_types'] = 'jpg|png|jpeg|gif|doc|docx|pdf';
                 $config['max_size'] = '200000';
                 $this->load->library('upload', $config);
 
@@ -202,60 +203,38 @@ function view_each(){
             //$this->session->set_flashdata('success', 'Post edited');
             redirect('posts/index2');}
 		}
+		
+		
+	
 
     function reject($id = null) {
 
-        if ($id == null) {
+       if ($id == null) {
             $id = $this->input->post('id');
         }
-        $this->form_validation->set_rules('title', 'title', 'required|xss_clean');
-        $this->form_validation->set_rules('nomor', 'nomor', 'required|xss_clean');
-        $this->form_validation->set_rules('version', 'vesrion', 'required|xss_clean');
+        
         $this->form_validation->set_rules('history', 'history', 'required|xss_clean');
-		$this->form_validation->set_rules('type', 'type', 'required|xss_clean');
-		$this->form_validation->set_rules('categories_id', 'category', 'required|xss_clean');
-       // $this->form_validation->set_rules('categories_id', 'category', 'required|xss_clean');
         $this->form_validation->set_rules('status', 'status', 'required|xss_clean');
         $this->form_validation->set_error_delimiters('', '<br/>');
         if ($this->form_validation->run() == TRUE) {
 
             $params = array(
-                'title' => $this->input->post('title'),
-                //'permalink' => url_title($this->input->post('title')),
-                'nomor' => $this->input->post('nomor'),
-				'version' => $this->input->post('version'),
+                
 				'history' => $this->input->post('history'),
-				'type' => $this->input->post('type'),
-				'categories_id' => $this->input->post('categories_id'),
-                //'categories_id' => $this->input->post('categories_id'),
-                'status' => ('reject'),
-                //'users_id' => $this->session->userdata('id'),
+                'status' => (2),
                 'created' => date("Y-m-d H:i:s")
             );
-            if ($_FILES['image']['error'] != 4) {
-                $config['upload_path'] = $this->imagePath;
-                $config['allowed_types'] = 'jpg|png|jpeg|gif|doc|docx';
-                $config['max_size'] = '200000';
-                $this->load->library('upload', $config);
-
-                if ($this->upload->do_upload("image")) {
-                    $image = $this->upload->data();
-                    $params['image'] =$image['file_name'];
-                }
-            }
 
             $this->Posts_model->update($id, $params);
-            //$this->session->set_flashdata('success', 'Post edited');
-            redirect('posts');
+            redirect('posts/index2');
         }
-
+	
         $data['post'] = $this->Posts_model->findById($id);
         $data['categories'] = $this->Categories_model->findList();
         $data['status'] = $this->status;
         $data['isi'] = 'admin/posts/reject_doc';
         $this->load->view($this->templatevp, $data);
     }
-
 
 
 

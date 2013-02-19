@@ -14,9 +14,7 @@
 <?php } ?>
 
 
-	<a class="buat_baru" href="#"><i class="icon-book"></i> Add Document </a> <br/>
-    <a class="laporan" href="#"><i class="icon-book"></i> View Document </a> 
-    
+
 </ul> 
 
  

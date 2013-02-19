@@ -83,6 +83,7 @@ function edit_submit_user()
 	else{
 $this->edit_user();}
 }
+
 function register($page = null)
 {
 $isi['isi']='add1';
@@ -129,6 +130,7 @@ redirect('user2/view');
 }
 $this->register();
 }
+
 function hapus_user($id){
 $id=$this->uri->segment(3);
 $this->load->model('user_model');

@@ -35,13 +35,7 @@
 </td>
 </tr>
 
-<tr>
-<td width="125">History</td>
-<td width="32">:</td>
-<td>
-<?php echo $row->history;?>
-</td>
-</tr>
+
 
 <tr>
 <td width="125">Type</td>
@@ -59,7 +53,13 @@
 </td>
 </tr>
   
-
+<tr>
+<td width="125">Comment</td>
+<td width="32">:</td>
+<td>
+<?php echo $row->history;?>
+</td>
+</tr>
   
   
 
